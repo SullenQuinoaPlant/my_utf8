@@ -1,4 +1,16 @@
-#include "my_utf8.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   my_utf8.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/09/14 08:55:26 by nmauvari          #+#    #+#             */
+/*   Updated: 2018/09/14 08:55:31 by nmauvari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "inner.h"
 
 /*To utf-8 format; raw, no checks, can get bigger
 ** than the standard 4 bytes; will fail should

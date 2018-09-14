@@ -20,24 +20,6 @@ define BUILD_LIB
 	cp $@/includes/$@.h $(LIBS_I)
 endef
 
-libft :
-	git clone \
-		--single-branch \
-		-b release https://github.com/SullenQuinoaPlant/Libft.git \
-		--depth 1 \
-		$(LIB_DIR)/$@/
-	$(BUILD_LIB)
-
-
-libmyfloatingpoint :
-	git clone \
-		--single-branch \
-		-b release https://github.com/SullenQuinoaPlant/my_floatingpoint.git \
-		--depth 1 \
-		$(LIB_DIR)/$@/
-	$(BUILD_LIB)
-
-
 .PHONY : clean-lib*
 clean-lib% :
 	-rm -rf $(LIB_DIR)/lib$*
@@ -46,3 +28,21 @@ clean-lib% :
 
 .PHONY : re-lib*
 re-libr% : clean-lib% lib%
+
+
+#DEPENDENCIES :
+libft :
+	git clone \
+		--single-branch \
+		-b release https://github.com/SullenQuinoaPlant/Libft.git \
+		--depth 1 \
+		$(LIB_DIR)/$@/
+	$(BUILD_LIB)
+
+libmystupidmath :
+	git clone \
+		--single-branch \
+		-b release https://github.com/SullenQuinoaPlant/my_stupidmath.git\
+		--depth 1 \
+		$(LIB_DIR)/$@/
+	$(BUILD_LIB)
