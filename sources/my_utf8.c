@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 08:55:26 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 09:59:32 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/14 13:04:11 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int				utf8_seq(
 	int char_lim,
 	char *put)
 {
-	int				sz;
-	unsigned char	c;
-	unsigned char	cs[CHAR_BIT];
-	unsigned char	* const pc = cs + CHAR_HBIT;
+	int						sz;
+	unsigned char			c;
+	unsigned char			cs[CHAR_BIT];
+	unsigned char *const	pc = cs + CHAR_HBIT;
 
 	sz = 0;
 	if (val & ~((wchar_t)((c = val) & ~ASCII_MASK)))
@@ -57,12 +57,12 @@ int				utf8_trueseq(
 }
 
 size_t			utf8_strtoseq(
-		wchar_t *str,
-		char *put,
-		size_t len)
+	wchar_t *str,
+	char *put,
+	size_t len)
 {
-	char	* const lim = put + len - UTF8_MAX_CHARS;
-	char	* const save = put;
+	char *const	lim = put + len - UTF8_MAX_CHARS;
+	char *const	save = put;
 
 	if (!(str && *str))
 		return (0);
