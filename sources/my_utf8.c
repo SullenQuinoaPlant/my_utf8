@@ -6,21 +6,25 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 08:55:26 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 08:55:31 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/14 09:27:22 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inner.h"
 
-/*To utf-8 format; raw, no checks, can get bigger
+/*
+** To utf-8 format; raw, no checks, can get bigger
 ** than the standard 4 bytes; will fail should
 ** wchar_t be more than
-** (CHAR_BIT - 1) * CHAR_BIT / 2 bits large.
+** (CHAR_BIT - 1) * (CHAR_BIT - 2) bits large.
 */
-int
-	as_utf8seq(
-		wchar_t val, int char_lim,
-		char *put)
+
+
+int				utf8_seq(
+int				as_utf8seq(
+	wchar_t val,
+	int char_lim,
+	char *put)
 {
 	int				sz;
 	unsigned char	c;
@@ -28,15 +32,15 @@ int
 	unsigned char	* const pc = cs + CHAR_HBIT;
 
 	sz = 0;
-	if (val & ~((c = val) & ~ASCII_MASK))
+	if (val & ~((wchar_t)((c = val) & ~ASCII_MASK)))
 	{
 		while (val && sz < CHAR_HBIT)
 		{
-			pc[-sz++] = UTF8_01X | (val & ~UTF8_BMASK);
+			pc[-sz++] = UTF8_10X | (val & ~UTF8_BMASK);
 			val >>= UTF8_BITS;
 		}
 		c = pc[-(sz - 1)];
-		if (my_flog2(c & ~UTF8_01X) + sz + 2 > CHAR_BIT)
+		if (my_flog2(c & ~UTF8_10X) + sz + 2 > CHAR_BIT)
 			c = ~0 << (CHAR_BIT - (sz + 1));
 		else
 			c |= ~0 << (CHAR_BIT - sz--);
@@ -47,18 +51,19 @@ int
 	return (sz);
 }
 
-int
-	true_utf8seq(
-		wchar_t val, char *put)
+int				utf8_trueseq(
+int				true_utf8seq(
+	wchar_t val,
+	char *put)
 {
 	return (as_utf8seq(val, UTF8_MAX_CHARS, put));
 }
 
-size_t
-	str_to_utf8(
+size_t			utf8_strtoseq(
+size_t			str_to_utf8(
 		wchar_t *str,
-		char 	*put,
-		size_t 	len)
+		char *put,
+		size_t len)
 {
 	char	* const lim = put + len - UTF8_MAX_CHARS;
 	char	* const save = put;
