@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 08:55:26 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 09:27:22 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/14 09:59:32 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 ** (CHAR_BIT - 1) * (CHAR_BIT - 2) bits large.
 */
 
-
 int				utf8_seq(
-int				as_utf8seq(
 	wchar_t val,
 	int char_lim,
 	char *put)
@@ -52,7 +50,6 @@ int				as_utf8seq(
 }
 
 int				utf8_trueseq(
-int				true_utf8seq(
 	wchar_t val,
 	char *put)
 {
@@ -60,7 +57,6 @@ int				true_utf8seq(
 }
 
 size_t			utf8_strtoseq(
-size_t			str_to_utf8(
 		wchar_t *str,
 		char *put,
 		size_t len)
