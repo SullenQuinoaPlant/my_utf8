@@ -1,4 +1,4 @@
-NAME =
+NAME = myutf8
 LIBNAME = lib$(NAME)
 
 CALL_DIR := $(shell pwd)

@@ -1,6 +1,6 @@
-NAME =
+NAME = myutf8
 LIBNAME = lib$(NAME)
-GIT_REPO =
+GIT_REPO = https://github.com/SullenQuinoaPlant/my_utf8.git
 
 CALL_DIR := $(shell pwd)
 SRC_DIR := $(ROOT)/sources
