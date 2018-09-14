@@ -19,7 +19,7 @@ int	declare_tests_and_run(int all_of, char *these[])
 			assert_true(UTF8_MAX_CHARS == 4);
 		}
 		else
-			skip();//which shouldn't happen
+			skip();//which oughtn't happen
 	)
 
 	T(t0,
