@@ -2,6 +2,7 @@
 #include "cmocka/my_overlay.h"
 
 #include "libmystupidmath.h"
+#include "inner.h"
 
 #define AR_SZ 100
 int	declare_tests_and_run(int all_of, char *these[])
