@@ -13,6 +13,8 @@
 #ifndef MYUTF8_H
 # define MYUTF8_H
 
+# define UTF8_MAX_CHARS 4
+
 /*
 ** DO NOT USE IF WCHAR_T WIDER THAN 32 BITS
 */

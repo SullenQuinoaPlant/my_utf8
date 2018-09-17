@@ -65,14 +65,3 @@ $(RELEASE_DIR) :
 		git add * && \
 		git commit -m make_release && \
 		git push
-
-################
-#MISCELLANEOUS :
-
-.PHONY : gcp
-gcp :
-	git commit -a -m i; git push;
-
-.PHONY : grm
-grm :
-	git reset --hard && make CFLAGS_MORE=-g
