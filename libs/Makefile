@@ -16,8 +16,8 @@ re-dependencies : clean-dependencies build-dependencies
 
 define BUILD_LIB
 	$(MAKE) -C $(LIB_DIR)/$@/ 
-	cp $@/$@.a $(LIBS_L)
-	cp $@/includes/$@.h $(LIBS_I)
+	cp $(LIB_DIR)/$@/$@.a $(LIBS_L)
+	cp $(LIB_DIR)/$@/includes/$@.h $(LIBS_I)
 endef
 
 .PHONY : clean-lib*
