@@ -53,7 +53,7 @@ int				utf8_trueseq(
 	wchar_t val,
 	char *put)
 {
-	return (as_utf8seq(val, UTF8_MAX_CHARS, put));
+	return (utf8_seq(val, UTF8_MAX_CHARS, put));
 }
 
 size_t			utf8_strtoseq(
@@ -67,6 +67,6 @@ size_t			utf8_strtoseq(
 	if (!(str && *str))
 		return (0);
 	while (*str && put < lim)
-		put += true_utf8seq(*str++, put);
+		put += utf8_trueseq(*str++, put);
 	return (put - save);
 }
