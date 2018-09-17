@@ -10,7 +10,7 @@ EXECUTION_STAMPS := $(TEST_OBJS:.o=.execution.stamp)
 CFLAGS_UTEST = -fno-builtin -g
 CFLAGS_UTEST += $(CFLAGS_MORE) #$(CFLAGS) were annoying the hell out of me
 
-TEST_DEPENDENCIES = libmystupidmath libcmocka_shared
+TEST_DEPENDENCIES = libcmocka_shared
 
 
 .PHONY : tests_all
