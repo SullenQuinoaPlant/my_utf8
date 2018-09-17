@@ -2,6 +2,7 @@ language: c
 os:
  - linux
 install:
+ - make clean-dependencies
  - make build_dependencies
  - make build_test_dependencies
 script:
