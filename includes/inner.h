@@ -16,6 +16,7 @@
 # include <limits.h>
 # include "libmystupidmath.h"
 # include "libft.h"
+# include "myutf8.h"
 
 # define CHAR_HBIT (CHAR_BIT - 1)
 # define ASCII_MASK (~0 << CHAR_HBIT)

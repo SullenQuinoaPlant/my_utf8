@@ -25,7 +25,7 @@ int				utf8_seq(
 size_t			utf8_strtoseq(
 	wchar_t	*str,
 	char	*put,
-	size_t	len)
+	size_t	len);
 
 int				utf8_trueseq(
 	wchar_t	val,
