@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 08:55:26 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 13:04:11 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/20 22:37:16 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ int				utf8_seq(
 		}
 		c = pc[-(sz - 1)];
 		if (my_flog2(c & ~UTF8_10X) + sz + 2 > CHAR_BIT)
-			c = ~0 << (CHAR_BIT - (sz + 1));
+			c = ~(unsigned int)0 << (CHAR_BIT - (sz + 1));
 		else
-			c |= ~0 << (CHAR_BIT - sz--);
+			c |= ~(unsigned int)0 << (CHAR_BIT - sz--);
 	}
 	pc[-sz++] = c;
 	if ((sz = sz <= char_lim ? sz : 0))
