@@ -51,7 +51,7 @@ cmocka :
 		-I $(LIBS_I) -L $(LIBS_L)\
 	 	$(TEST_DIR)/cmocka/check_install.c\
 		-lcmocka_shared -o test.o\
-		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
+		-Wl,-rpath,$(LIBS_L)\
 		&& ./test.o .;\
 	then\
 		echo "cmocka installed";\
@@ -72,7 +72,7 @@ $(LIBS_L)/$(LIBNAME).a
 		-lcmocka_shared\
 		-l$(NAME) -lmystupidmath -lft\
 		-o $@\
-		-Wl,-rpath=$$(readlink -e $(LIBS_L))\
+		-Wl,-rpath,$(LIBS_L)\
 
 
 

@@ -6,8 +6,12 @@ endif
 BUILD_DIR = cmocka_build
 SOURCE_DIR = cmocka_source
 
+ifndef CMAKE
+	CMAKE = cmake
+endif
+
 cmocka : $(BUILD_DIR) $(SOURCE_DIR)
-	cd $(BUILD_DIR) && cmake ../$(SOURCE_DIR) && make;
+	cd $(BUILD_DIR) && $(CMAKE) ../$(SOURCE_DIR) && make;
 	cp $(SOURCE_DIR)/include/cmocka.h $(LIBS_I)/
 	cp $(BUILD_DIR)/src/libcmocka* $(LIBS_L)/
 
