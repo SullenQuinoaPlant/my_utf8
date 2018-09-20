@@ -5,6 +5,7 @@ install:
  - make clean-dependencies
  - make build_dependencies
  - make build_test_dependencies
+ - make gnu_ld
 script:
  - make
  - make tests
