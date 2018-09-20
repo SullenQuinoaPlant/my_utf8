@@ -6,7 +6,7 @@
 /*   By: nmauvari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/14 10:00:16 by nmauvari          #+#    #+#             */
-/*   Updated: 2018/09/14 10:00:23 by nmauvari         ###   ########.fr       */
+/*   Updated: 2018/09/20 22:26:46 by nmauvari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include "myutf8.h"
 
 # define CHAR_HBIT (CHAR_BIT - 1)
-# define ASCII_MASK (~0 << CHAR_HBIT)
+# define ASCII_MASK (~(unsigned int)0 << CHAR_HBIT)
 # define UTF8_BITS (CHAR_BIT - 2)
-# define UTF8_BMASK (~0 << UTF8_BITS)
+# define UTF8_BMASK (~(unsigned int)0 << UTF8_BITS)
 # define UTF8_10X ('\1' << CHAR_HBIT)
 
 /*
